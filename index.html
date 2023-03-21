@@ -29,8 +29,9 @@
                         <li><a href="#">Settings</a></li>
                     </ul>
                 </nav>
-                <div class="dropdown">
-                    <img src="./assets/image/avatar.png" onclick="getInfo()">
+                <div class="dropdown" onclick="getInfo()">
+                    <img class="icon" src="./assets/image/avatar.png">
+                    <div class="drop-out"></div>
                 </div>
             </div>
         </header>
@@ -42,13 +43,16 @@
                         <textarea placeholder="What's new, Noah?" class="input" maxlength="400"></textarea>
                     </div>
                         <span class="select">
-                            <i class="fa fa-camera" onclick="fileSelect()"></i>
+                            <i class="fa fa-camera"></i>
                         </span>
                         <input type="file" class="image" accept="image">
-                        <input type="submit" class="post" value="Post"/>
+                        <button class="post">Post</button>
+                        <p id="error"></p>
                   </div>
                   <div class="center">
-                    <div id="output"></div>
+                    <div class="out placement">
+                        <img class="output">
+                    </div>
                   </div>
               </div>
             </div>

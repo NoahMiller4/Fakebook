@@ -23,7 +23,6 @@
     resize: both;
 }
 
-
 body {
     background-color: var(--app-dark-bg);
     height: 100vh;
@@ -76,7 +75,7 @@ header nav ul li a:hover {
     color: #f1f2f3;
 }
   
-img {
+.icon {
     margin-top: 8px;
     height: 40px;
     width: 40px;
@@ -91,7 +90,6 @@ img:hover {
 .dropdown {
     position: relative;
     background-color: #172633;
-    z-index: 1;
 }
 
 .dropdown a {
@@ -112,9 +110,8 @@ img:hover {
 .area {
   display: inline-block;
   text-align: left;
-  margin-top: 30px;
-  margin-left: 100px;
-  max-width: 800px;
+  margin: auto;
+  margin: 20px;
   height: 200px;
   border: 1px solid rgb(255 255 255 / 0.1);
   background-color: rgb(255 255 255 / 0.1);
@@ -148,18 +145,18 @@ input[type=file] {
 span {
     margin-left: 20px;
     height: 50px;
-    width: 450px;
+    width: 500px;
     color: #fff;
     cursor: pointer;
 }
 
-span, input[type=submit] {
+span, button {
     display: inline-block;
-    justify-content: space-between;
 }
 
-input[type=submit] {
+button {
   text-align: center;
+  margin-right: 10px;
   width: 100px;
   height: 38px;
   background-color: var(--app-blue);
@@ -180,17 +177,25 @@ input+input {
   margin-left: 10px;
 }
 
+p {
+    color: var(--app-red-hover);
+    font-size: 18px;
+}
+
 /* -----------------------------------*/
 /* Output                             */
 /* -----------------------------------*/
 
-.output {
-  display: inline-block;
+.newDiv {
+  align-items: center;
   text-align: left;
+  margin: auto;
   margin-top: 20px;
-  margin-left: 100px;
-  max-width: 800px;
-  height: 200px;
+  padding: 20px;
+  min-width: 600px;
+  max-width: 700px;
+  min-height: 200px;
+  color: #000;
   border: 1px solid rgb(255 255 255 / 0.3);
   background-color: rgb(255 255 255 / 0.8);
   border-radius: 5px;
@@ -202,12 +207,18 @@ input+input {
 
 @media (max-width: 768px) {
     .container { width: min(100% - 5%, 768px);}
+
     h1 { font-size: 18px; }
+
     nav ul li a { font-size: 10px; }
+
     .area, .output {
         margin: 0;
         margin-top: 20px;
         max-width: 400px;
     }
+
     span { width: 250px; }
+
+    .newDiv { width: 400px; }
 }
