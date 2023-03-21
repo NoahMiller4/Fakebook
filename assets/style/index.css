@@ -106,7 +106,7 @@ img:hover {
 }
   
 /* -----------------------------------*/
-/* main                               */
+/* Input                              */
 /* -----------------------------------*/
 
 .area {
@@ -181,6 +181,22 @@ input+input {
 }
 
 /* -----------------------------------*/
+/* Output                             */
+/* -----------------------------------*/
+
+.output {
+  display: inline-block;
+  text-align: left;
+  margin-top: 20px;
+  margin-left: 100px;
+  max-width: 800px;
+  height: 200px;
+  border: 1px solid rgb(255 255 255 / 0.3);
+  background-color: rgb(255 255 255 / 0.8);
+  border-radius: 5px;
+}
+
+/* -----------------------------------*/
 /* Responsiveness                     */
 /* -----------------------------------*/
 
@@ -188,7 +204,7 @@ input+input {
     .container { width: min(100% - 5%, 768px);}
     h1 { font-size: 18px; }
     nav ul li a { font-size: 10px; }
-    .area {
+    .area, .output {
         margin: 0;
         margin-top: 20px;
         max-width: 400px;
