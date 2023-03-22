@@ -16,8 +16,9 @@ const drop = document.querySelector('.dropdown');
 const out = document.querySelector('.out')
 const output = document.querySelector('.output');
 const dropOut = document.querySelector('.drop-out');
-const error = document.querySelector('.display');
-
+const error = document.querySelector('.error');
+const span = document.querySelector('.select')
+const display = document.getElementById('display')
 class User {
     #id;
     #name;
@@ -67,25 +68,55 @@ class Subscriber extends User {
 /* File Input                         */
 /* -----------------------------------*/
 
-// Use $ identifier to apply shortcut to the function. 
+// Use $ identifier to apply shortcut to the function. jQuery syntax (selector)
 $(select).click(function fileSelect() {
     $("input[type='file']").trigger('click');
   });
-  
   $('input[type="file"]').on('change', function() {
     let val = $(this).val();
     $(this).siblings('span').text(val);
-})
+});
 
+// Use regex to remove fakepath
+file.addEventListener('change', function() {
+    if (file.value) {
+        span.innerHTML = file.value.match(/[\/\\]([\w\d\s\. \-\(\)]+)$/);
+    } else {
+        file.innerHTML = 'No file chosen yet.'
+    }
+});
+
+addBtn.addEventListener('click', function () {
+    input.value = '';
+    }, false);
 
 addBtn.addEventListener('click', addDiv);
 
 function addDiv() {
     const newDiv = document.createElement('div');
     newDiv.classList.add('newDiv');
-    out.appendChild(newDiv);
-    newDiv.appendChild(input);
-    input.style.color='#000'
-    input.style.fontSize= '16px'
+    out.append(newDiv);
+    let x = $('#input').val();
+    newDiv.append(x)
 }
 
+const selectFile = event => {
+    const [file] = event.target.files;
+    if (file) {
+      document.getElementById('display').src = URL.createObjectURL(file);
+    }
+}
+
+let months = [
+    'January', 'February', 'March', 'April', 'May', 'June', 
+    'July', 'August', 'September', 'October', 'November', 'December'
+];
+let date = new Date();
+let day = date.getDate();
+let month = date.getMonth();
+let yy = date.getFullYear();
+let year = (yy < 100) ? yy + 1900 : yy;
+
+let timer = document.createElement('div');
+timer.innerHTML = months[month] + " " + day + ", " + year;
+document.getElementById('time').appendChild(timer);

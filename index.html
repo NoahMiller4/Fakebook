@@ -40,18 +40,18 @@
               <div class="center">
                   <div class="area">
                     <div class="field">
-                        <textarea placeholder="What's new, Noah?" class="input" maxlength="400"></textarea>
+                        <textarea rows="1" id="input" class="input" placeholder="What's new, Noah?"></textarea>
                     </div>
                         <span class="select">
                             <i class="fa fa-camera"></i>
                         </span>
-                        <input type="file" class="image" accept="image">
+                        <input type="file" class="image" accept="image" onchange="selectFile(event)">
                         <button class="post">Post</button>
                         <p id="error"></p>
                   </div>
                   <div class="center">
-                    <div class="out placement">
-                        <img class="output">
+                    <div class="out" id="out">
+                        <img id="display">
                     </div>
                   </div>
               </div>
