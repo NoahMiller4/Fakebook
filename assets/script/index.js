@@ -68,7 +68,6 @@ const sub = new Subscriber(
 function getInfo() {
     const newDiv1 = document.createElement('div');
     newDiv1.classList.add('newDiv1');
-    
     newDiv1.innerHTML = `
         <div class="user">USER:</div>
         <div class="id1">ID: ${user.id}</div>
@@ -119,7 +118,7 @@ addBtn.addEventListener('click', newDiv);
 function newDiv() {
     const newDiv = document.createElement('div');
     newDiv.classList.add('newDiv');
-    out.append(newDiv);
+    
     let months = [
         'January', 'February', 'March', 'April', 'May', 'June', 
         'July', 'August', 'September', 'October', 'November', 'December'
@@ -129,16 +128,16 @@ function newDiv() {
     let month = date.getMonth();
     let yy = date.getFullYear();
     let year = (yy < 100) ? yy + 1900 : yy;
-    const image1 = document.createElement("IMG");
-    image1.src = "..//image/avatar.png";
-    image1.classList.add('newImg');
+    let info = input.value;
     newDiv.innerHTML = `
-        <div class="divName">${image1} ${sub.name}
+        <img class="newImg" src="./assets/image/avatar.png"/>
+        <div class="divName"> ${user.name}
         <p class="time">${months[month] + " " + day + ", " + year}</p>
         </div>
-        
-        `;
-    
+        <div class="info">${info}</div> 
+        <div class="pic">${file}</div>
+        `
+        out.append(newDiv);
 }
 
 const selectFile = event => {
@@ -147,5 +146,3 @@ const selectFile = event => {
       document.getElementById('display').src = URL.createObjectURL(file);
     }
 }
-
-

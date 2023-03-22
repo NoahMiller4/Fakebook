@@ -225,23 +225,23 @@ p {
 
 .divName {
     display: inline-block;
+    position: relative;
+    top: -15px;
+    padding-left: 10px;
 }
 
 .time {
     display: inline-block;
-    position: absolute;
-    right: 375px;
     color: #3d3d3d;
+    padding-left: 260px;
 }
 
 .newImg {
     display: inline-block;
-    margin-top: 8px;
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    line-height: 60px;
-} 
+}  
 
 /* -----------------------------------*/
 /* Responsiveness                     */
@@ -254,7 +254,7 @@ p {
 
     nav ul li a { font-size: 10px; }
 
-    .area, .output {
+    .area, .output, .newDiv, .newDiv1, #display {
         margin: 0;
         margin-top: 20px;
         max-width: 400px;
@@ -262,6 +262,12 @@ p {
 
     span { width: 250px; }
 
-    .newDiv { width: 400px; }
+    .newDiv, .newDiv1 {
+        width: 200px;
+    }
+
+    .time {
+        padding-left: 50px;
+    }
 }
 
