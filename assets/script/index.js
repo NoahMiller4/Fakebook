@@ -20,6 +20,7 @@ const dropOut = document.querySelector('.drop-out');
 const error = document.querySelector('.error');
 const span = document.querySelector('.select')
 const display = document.getElementById('display')
+
 class User {
     #id;
     #name;
@@ -128,14 +129,11 @@ function newDiv() {
     let month = date.getMonth();
     let yy = date.getFullYear();
     let year = (yy < 100) ? yy + 1900 : yy;
-    let info = input.value;
     newDiv.innerHTML = `
         <img class="newImg" src="./assets/image/avatar.png"/>
         <div class="divName"> ${user.name}
         <p class="time">${months[month] + " " + day + ", " + year}</p>
         </div>
-        <div class="info">${info}</div> 
-        <div class="pic">${file}</div>
         `
         out.append(newDiv);
 }
